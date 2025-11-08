@@ -1,29 +1,29 @@
-name: Netlib Keepalive
+名字: Netlib Keepalive
 
 on:
   schedule:
-    - cron: '0 0 */30 * *'  # 每30天运行一次（时间早上8点）
+    - cron: '0 9 */17 * *'  # 每30天运行一次（时间早上8点）
   workflow_dispatch:  # 允许手动运行
 
 jobs:
   auto_login_netlib:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - 名字: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - 名字: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - 名字: Install dependencies
         run: npm install
 
-      - name: Install Playwright and browser
+      - 名字: Install Playwright and browser
         run: npx playwright install --with-deps chromium
 
-      - name: Run lognin script
+      - 名字: Run lognin script
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
