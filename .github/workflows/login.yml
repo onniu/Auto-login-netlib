@@ -2,7 +2,7 @@
 
 on:
   schedule:
-    - cron: '0 0 */30 * *'  # 每30天运行一次（时间早上8点）
+    - cron: '0 9 */29 * *'  # 每29天运行一次（时间早上9点）
   workflow_dispatch:  # 允许手动运行
 
 jobs:
